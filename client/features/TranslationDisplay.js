@@ -19,6 +19,7 @@ function TranslationDisplay({ result, targetLanguage }) {
       setMenu(response.data.reformattedMenu);
     } catch (error) {
       console.error('Error calling /api/reformat-menu', error);
+      alert('No text or target language provided', error);
     }
   };
 

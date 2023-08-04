@@ -26,7 +26,7 @@ router.post('/reformat-menu', async(req, res) =>{
           }
         });
         const reformattedMenu = openaiResponse.data.choices[0].text;
-        res.json({ reformattedMenu });
+        return res.status(200).json({ reformattedMenu });
 }catch(error){
     console.error('Error calling OpenAPI', error);
     res.status(500).json({ error: "Failed to reformat"})
